@@ -1,4 +1,4 @@
-module example/hello
+module example/quote
 
 go 1.17
 
