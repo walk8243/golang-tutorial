@@ -6,6 +6,7 @@ import (
 	"log"
 	"os"
 	"strconv"
+	"strings"
 )
 
 func main() {
@@ -27,7 +28,7 @@ func main() {
 	}
 
 	fib := fibonacci(fibonacciNumber)
-	fmt.Println(fib)
+	log.Print(strings.Trim(strings.Join(strings.Fields(fmt.Sprint(fib)), ", "), "[]"))
 }
 
 func fibonacci(num int) []int {
