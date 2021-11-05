@@ -1,11 +1,32 @@
 package main
 
 import (
+	"errors"
 	"fmt"
+	"log"
+	"os"
+	"strconv"
 )
 
 func main() {
-	fib := fibonacci(10)
+	log.SetPrefix("fibonacci: ")
+	log.SetFlags(0)
+
+	if len(os.Args) == 1 {
+		log.Fatal(errors.New("arguments length is equal or over 2"))
+		os.Exit(1)
+	}
+	fibonacciNumber, err := strconv.Atoi(os.Args[1])
+	if err != nil {
+		log.Fatal(err)
+		os.Exit(1)
+	}
+	if fibonacciNumber == 0 {
+		log.Fatal(errors.New("args[1] is equal or over 1"))
+		os.Exit(1)
+	}
+
+	fib := fibonacci(fibonacciNumber)
 	fmt.Println(fib)
 }
 
