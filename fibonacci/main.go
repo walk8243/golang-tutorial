@@ -9,6 +9,7 @@ import (
 	"strings"
 )
 
+// play `go run . 10`
 func main() {
 	log.SetPrefix("fibonacci: ")
 	log.SetFlags(0)
